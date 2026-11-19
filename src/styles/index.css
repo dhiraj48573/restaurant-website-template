@@ -1,0 +1,111 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* =========================================================================
+     THEME A: TRADITIONAL DHABA (Red + Black + White) - DEFAULT
+     ========================================================================= */
+  :root,
+  .theme-dhaba {
+    --color-primary: #C8102E;
+    --color-primary-hover: #A30D25;
+    --color-primary-light: #FEE2E2;
+    --color-accent: #D97706;
+    --color-accent-hover: #B45309;
+    --color-secondary: #1F2937;
+    --color-surface: #FCFAF7;
+    --color-card: #FFFFFF;
+    --color-card-border: #EFE8DC;
+    --color-text: #18181B;
+    --color-text-muted: #52525B;
+    --theme-badge: "Traditional Dhaba";
+  }
+
+  /* =========================================================================
+     THEME B: PREMIUM RESTAURANT (Black + Gold + Cream)
+     ========================================================================= */
+  .theme-luxury {
+    --color-primary: #121826;
+    --color-primary-hover: #050811;
+    --color-primary-light: #2A324B;
+    --color-accent: #C59B27;
+    --color-accent-hover: #A98319;
+    --color-secondary: #C59B27;
+    --color-surface: #FAF7F2;
+    --color-card: #FFFFFF;
+    --color-card-border: #E7DFD1;
+    --color-text: #111827;
+    --color-text-muted: #57534E;
+    --theme-badge: "Premium Dining";
+  }
+
+  /* =========================================================================
+     THEME C: FAMILY RESTAURANT (Orange + White + Dark Green)
+     ========================================================================= */
+  .theme-family {
+    --color-primary: #EA580C;
+    --color-primary-hover: #C2410C;
+    --color-primary-light: #FFEDD5;
+    --color-accent: #15803D;
+    --color-accent-hover: #166534;
+    --color-secondary: #166534;
+    --color-surface: #FDFCF9;
+    --color-card: #FFFFFF;
+    --color-card-border: #E5E7EB;
+    --color-text: #1F2937;
+    --color-text-muted: #4B5563;
+    --theme-badge: "Family Restaurant";
+  }
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-surface);
+}
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94A3B8;
+}
+
+/* Print Styles for QR Code Tent Card */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  #printable-tent-card,
+  #printable-tent-card * {
+    visibility: visible;
+  }
+  #printable-tent-card {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    margin: 0;
+    padding: 20px;
+    background: white !important;
+    color: black !important;
+  }
+}
+
+/* Subtle Pulse Glow */
+@keyframes softPulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(200, 16, 46, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 12px rgba(200, 16, 46, 0);
+  }
+}
+
+.animate-soft-pulse {
+  animation: softPulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
